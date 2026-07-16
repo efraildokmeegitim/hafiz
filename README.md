@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hafız Yol Arkadaşım
 
-## Getting Started
+Diyanet usulü hafızlık yapımını dijitalleştiren, modern ve akıllı bir hafızlık takip & çalışma platformu. 
 
-First, run the development server:
+Hafızlık sürecindeki öğrencilerin ezberlerini pekiştirmesi, hocaların ise talebelerini anlık olarak takip edebilmesi için tasarlanmıştır.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 Özellikler
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Diyanet Usulü Hafızlık:** Cüzlerin son sayfalarından başlayarak başa doğru ilerleyen geleneksel hafızlık usulüne tam uyum.
+- **Akıllı Ses & Tekrar (Spaced Repetition):** Belirli ayet aralıklarını istenilen sayıda tekrar ettirebilme, sesli (Kuran.com API destekli) okuma takibi.
+- **Offline Çalışma (PWA):** İnternet olmadan da çalışma ve dinleme imkanı. (Firebase Offline Persistence ve Service Worker entegrasyonu).
+- **Hoca & Talebe Sistemi:** Hocaların talebelerini (halka/grup bazında) ekleyip onların "Ham", "Has", "Pekişmiş" durumlarını anlık takip edebilmesi.
+- **Gelişmiş Temalar:** Zümrüt (Açık), Gece (Koyu), Okyanus ve Çöl gibi modern renk paletleriyle göz yormayan (Glassmorphism & Mesh Gradient) arayüz deneyimi.
+- **Responsive Tasarım:** Hem mobil cihazlarda (iOS/Android için Capacitor uyumlu) hem de web ortamında kusursuz görünüm.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Kullanılan Teknolojiler
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend:** Next.js (App Router), React, TypeScript
+- **Stil & UI:** Vanilla CSS (CSS Variables), Glassmorphism, Lucide React (İkonlar), Recharts (Grafikler)
+- **Backend & Veritabanı:** Firebase Firestore (Realtime Database & Offline Persistence)
+- **Tema Yönetimi:** next-themes
+- **Veri Kaynakları:** Kuran.com API (Ses ve Meal/Tefsir verileri), Yerel JSON Mushaf Veritabanı
 
-## Learn More
+## 🚀 Kurulum
 
-To learn more about Next.js, take a look at the following resources:
+Projeyi bilgisayarınızda yerel olarak çalıştırmak için aşağıdaki adımları takip edin:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Depoyu Klonlayın:**
+   ```bash
+   git clone <REPO_URL>
+   cd hafiz
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Bağımlılıkları Yükleyin:**
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Firebase Ortam Değişkenlerini Ayarlayın:**
+   Proje ana dizininde bir `.env.local` dosyası oluşturun ve kendi Firebase yapılandırmanızı ekleyin:
+   ```env
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Geliştirme Sunucusunu Başlatın:**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Tarayıcınızdan `http://localhost:3000` adresine giderek uygulamayı görüntüleyin.
+
+## 📱 PWA Olarak Kullanım
+
+Uygulama tam bir PWA (Progressive Web App) olarak tasarlanmıştır. Tarayıcı menüsünden "Ana Ekrana Ekle" diyerek mobil cihazınızda native bir uygulama gibi kullanabilirsiniz.
+
+## 🤝 Katkıda Bulunma
+
+Bu proje açık kaynaklı değildir, ancak katkıda bulunmak (Pull Request) veya hata bildirmek (Issue) isterseniz depoyu forklayarak değişiklik önerebilirsiniz.
+
+## 📝 Lisans
+
+Tüm hakları saklıdır.

@@ -1,26 +1,228 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Outfit:wght@300;400;500;600;700&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root, [data-theme='light'] {
+  /* Elegant Light Mode (Ivory & Teal) */
+  --bg-gradient: linear-gradient(135deg, #FDFBF7 0%, #F3F4F0 100%);
+  --background: #FDFBF7;
+  --foreground: #1E293B;
+  
+  --primary: #0F766E; /* Teal 600 */
+  --primary-hover: #0D9488;
+  --primary-foreground: #ffffff;
+  --primary-glow: rgba(15, 118, 110, 0.25);
+  
+  --accent: #B45309; /* Amber 700 */
+  --accent-hover: #D97706;
+  --accent-glow: rgba(180, 83, 9, 0.25);
+
+  --card: rgba(255, 255, 255, 0.65);
+  --card-hover: rgba(255, 255, 255, 0.9);
+  --card-foreground: #1E293B;
+  --border: rgba(15, 118, 110, 0.12);
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.04), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme='dark'] {
+  /* Elegant Dark Mode (Midnight Slate & Gold) */
+  --bg-gradient: radial-gradient(circle at top center, #1E293B 0%, #020617 80%);
+  --background: #020617;
+  --foreground: #F8FAFC;
+  
+  --primary: #14B8A6; /* Teal 500 */
+  --primary-hover: #2DD4BF;
+  --primary-foreground: #020617;
+  --primary-glow: rgba(20, 184, 166, 0.35);
+  
+  --accent: #F59E0B; /* Amber 500 */
+  --accent-hover: #FBBF24;
+  --accent-glow: rgba(245, 158, 11, 0.35);
+
+  --card: rgba(15, 23, 42, 0.5);
+  --card-hover: rgba(30, 41, 59, 0.7);
+  --card-foreground: #F8FAFC;
+  --border: rgba(255, 255, 255, 0.06);
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+[data-theme='ocean'] {
+  /* Deep Blue/Cyan Ocean Theme */
+  --bg-gradient: linear-gradient(135deg, #082F49 0%, #0369A1 100%);
+  --background: #082F49;
+  --foreground: #F0F9FF;
+  
+  --primary: #38BDF8;
+  --primary-hover: #7DD3FC;
+  --primary-foreground: #082F49;
+  --primary-glow: rgba(56, 189, 248, 0.35);
+  
+  --accent: #818CF8;
+  --accent-hover: #A5B4FC;
+  --accent-glow: rgba(129, 140, 248, 0.35);
+
+  --card: rgba(12, 74, 110, 0.4);
+  --card-hover: rgba(12, 74, 110, 0.7);
+  --card-foreground: #F0F9FF;
+  --border: rgba(255, 255, 255, 0.08);
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='desert'] {
+  /* Warm Desert Sand & Copper */
+  --bg-gradient: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+  --background: #FFF7ED;
+  --foreground: #431407;
+  
+  --primary: #C2410C; /* Orange 700 */
+  --primary-hover: #EA580C;
+  --primary-foreground: #ffffff;
+  --primary-glow: rgba(194, 65, 12, 0.25);
+  
+  --accent: #9F1239; /* Rose 700 */
+  --accent-hover: #BE123C;
+  --accent-glow: rgba(159, 18, 57, 0.25);
+
+  --card: rgba(255, 255, 255, 0.55);
+  --card-hover: rgba(255, 255, 255, 0.85);
+  --card-foreground: #431407;
+  --border: rgba(194, 65, 12, 0.1);
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.07), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  transition: color 0.3s ease;
+  line-height: 1.6;
+}
+
+/* Glassmorphism Enhancements */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass:hover {
+  background: var(--card-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered animation delays for children */
+.stagger-1 { animation-delay: 0.1s; opacity: 0; }
+.stagger-2 { animation-delay: 0.2s; opacity: 0; }
+.stagger-3 { animation-delay: 0.3s; opacity: 0; }
+.stagger-4 { animation-delay: 0.4s; opacity: 0; }
+.stagger-5 { animation-delay: 0.5s; opacity: 0; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Modern Buttons */
+button {
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Form Elements (Select, Option, Input) */
+select, option, input {
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
+}
+
+select {
+  background-color: transparent;
+}
+
+select option {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.2);
+  border-radius: 10px;
+}
+[data-theme='dark'] ::-webkit-scrollbar-thumb,
+[data-theme='ocean'] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Typography for Quran */
+.quran-text {
+  font-family: 'Amiri Quran', serif;
+  line-height: 2.4;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+[data-theme='dark'] .quran-text,
+[data-theme='ocean'] .quran-text {
+  text-shadow: 0 2px 15px rgba(0,0,0,0.4);
 }
