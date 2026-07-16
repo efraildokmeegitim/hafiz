@@ -62,10 +62,19 @@ export const useAuth = () => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
-        const userRef = doc(db, 'users', currentUser.uid);
-        const docSnap = await getDoc(userRef);
-        if (docSnap.exists()) {
-          setProfile(docSnap.data() as UserProfile);
+        try {
+          const userRef = doc(db, 'users', currentUser.uid);
+          const docSnap = await getDoc(userRef);
+          if (docSnap.exists()) {
+            setProfile(docSnap.data() as UserProfile);
+          }
+        } catch (e: any) {
+          // If client is offline, suppress the ugly red error and proceed
+          if (e.message && e.message.includes("offline")) {
+            console.log("Offline mode: using cached profile if available.");
+          } else {
+            console.warn("Could not fetch profile:", e);
+          }
         }
       } else {
         setProfile(null);

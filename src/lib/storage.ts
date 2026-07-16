@@ -136,8 +136,12 @@ export const syncStateFromCloud = async (): Promise<HafizlikState | null> => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudState));
       return cloudState;
     }
-  } catch (error) {
-    console.error("Cloud fetch error:", error);
+  } catch (error: any) {
+    if (error.message && error.message.includes("offline")) {
+      console.log("Offline mode: skip cloud sync.");
+    } else {
+      console.error("Cloud fetch error:", error);
+    }
   }
   return null;
 };
