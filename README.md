@@ -1,33 +1,43 @@
-# Hafız Yol Arkadaşım
+<div align="center">
+  <h1>📖 Hafız Yol Arkadaşım</h1>
+  <p>Diyanet usulü hafızlık yapımını dijitalleştiren, modern ve akıllı bir hafızlık takip & çalışma platformu.</p>
 
-Diyanet usulü hafızlık yapımını dijitalleştiren, modern ve akıllı bir hafızlık takip & çalışma platformu. 
+  <p>
+    <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-14-black?logo=next.js" alt="Next.js" /></a>
+    <a href="https://firebase.google.com/"><img src="https://img.shields.io/badge/Firebase-V10-FFCA28?logo=firebase" alt="Firebase" /></a>
+    <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-Ready-blue?logo=typescript" alt="TypeScript" /></a>
+    <a href="#-lisans"><img src="https://img.shields.io/badge/Lisans-MIT-green" alt="Lisans: MIT" /></a>
+  </p>
+</div>
 
-Hafızlık sürecindeki öğrencilerin ezberlerini pekiştirmesi, hocaların ise talebelerini anlık olarak takip edebilmesi için tasarlanmıştır.
+<br />
 
-## 🌟 Özellikler
+Hafızlık sürecindeki öğrencilerin ezberlerini pekiştirmesi, hocaların ise talebelerini anlık olarak takip edebilmesi için tasarlanmış açık kaynaklı bir platformdur. Amacımız, kadim hafızlık geleneğini modern teknolojinin imkanlarıyla birleştirerek bu süreci kolaylaştırmaktır.
 
-- **Diyanet Usulü Hafızlık:** Cüzlerin son sayfalarından başlayarak başa doğru ilerleyen geleneksel hafızlık usulüne tam uyum.
-- **Akıllı Ses & Tekrar (Spaced Repetition):** Belirli ayet aralıklarını istenilen sayıda tekrar ettirebilme, sesli (Kuran.com API destekli) okuma takibi.
-- **Offline Çalışma (PWA):** İnternet olmadan da çalışma ve dinleme imkanı. (Firebase Offline Persistence ve Service Worker entegrasyonu).
-- **Hoca & Talebe Sistemi:** Hocaların talebelerini (halka/grup bazında) ekleyip onların "Ham", "Has", "Pekişmiş" durumlarını anlık takip edebilmesi.
-- **Gelişmiş Temalar:** Zümrüt (Açık), Gece (Koyu), Okyanus ve Çöl gibi modern renk paletleriyle göz yormayan (Glassmorphism & Mesh Gradient) arayüz deneyimi.
-- **Responsive Tasarım:** Hem mobil cihazlarda (iOS/Android için Capacitor uyumlu) hem de web ortamında kusursuz görünüm.
+## ✨ Özellikler
+
+- 📖 **Diyanet Usulü Hafızlık:** Cüzlerin son sayfalarından başlayarak başa doğru ilerleyen geleneksel hafızlık usulüne (Sayfa, Cüz, Has, Ham, Pekişmiş) tam uyum.
+- 🎧 **Akıllı Ses & Tekrar (Spaced Repetition):** Belirli ayet aralıklarını istenilen sayıda (hız ayarı ile) tekrar ettirebilme, sesli (Kuran.com API destekli) okuma ve satır takibi.
+- 📶 **Offline Çalışma (PWA):** İnternet bağlantısı koptuğunda dahi önbelleğe alınan sayfalarla çalışma ve dinleme imkanı. Firebase Offline Persistence ve Service Worker entegrasyonu.
+- 👨‍🏫 **Hoca & Talebe Sistemi:** Hocaların talebelerini gruplar (halkalar) halinde ekleyip ezber durumlarını anlık olarak panodan takip edebilmesi.
+- 🎨 **Gelişmiş Modern Temalar:** Zümrüt (Açık), Gece (Koyu), Okyanus ve Çöl gibi modern renk paletleriyle göz yormayan (Glassmorphism & Mesh Gradient) arayüz deneyimi.
+- 📱 **Cross-Platform:** Hem mobil cihazlarda hem de masaüstü web ortamında kusursuz görünüm ve PWA desteği.
 
 ## 🛠 Kullanılan Teknolojiler
 
 - **Frontend:** Next.js (App Router), React, TypeScript
-- **Stil & UI:** Vanilla CSS (CSS Variables), Glassmorphism, Lucide React (İkonlar), Recharts (Grafikler)
-- **Backend & Veritabanı:** Firebase Firestore (Realtime Database & Offline Persistence)
-- **Tema Yönetimi:** next-themes
-- **Veri Kaynakları:** Kuran.com API (Ses ve Meal/Tefsir verileri), Yerel JSON Mushaf Veritabanı
+- **Stil & UI:** Vanilla CSS (CSS Variables, Glassmorphism), Lucide React (İkonlar), Recharts (Grafikler)
+- **Backend & Veritabanı:** Firebase (Auth, Firestore, Offline Persistence)
+- **Tema Yönetimi:** next-themes (Sistem entegreli karanlık/aydınlık mod)
+- **Veri Kaynakları:** Kuran.com API (Ses, Meal ve Tefsir)
 
-## 🚀 Kurulum
+## 🚀 Kurulum (Local Development)
 
-Projeyi bilgisayarınızda yerel olarak çalıştırmak için aşağıdaki adımları takip edin:
+Projeyi kendi bilgisayarınızda geliştirmek veya incelemek isterseniz aşağıdaki adımları takip edebilirsiniz:
 
 1. **Depoyu Klonlayın:**
    ```bash
-   git clone <REPO_URL>
+   git clone https://github.com/KULLANICI_ADINIZ/hafiz.git
    cd hafiz
    ```
 
@@ -37,7 +47,7 @@ Projeyi bilgisayarınızda yerel olarak çalıştırmak için aşağıdaki adım
    ```
 
 3. **Firebase Ortam Değişkenlerini Ayarlayın:**
-   Proje ana dizininde bir `.env.local` dosyası oluşturun ve kendi Firebase yapılandırmanızı ekleyin:
+   Proje ana dizininde bir `.env.local` dosyası oluşturun. Kendi [Firebase](https://console.firebase.google.com/) konsolunuzdan oluşturduğunuz projenin bilgilerini girin:
    ```env
    NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
@@ -52,16 +62,21 @@ Projeyi bilgisayarınızda yerel olarak çalıştırmak için aşağıdaki adım
    npm run dev
    ```
 
-5. Tarayıcınızdan `http://localhost:3000` adresine giderek uygulamayı görüntüleyin.
+Tarayıcınızdan `http://localhost:3000` adresine giderek uygulamaya erişebilirsiniz.
 
-## 📱 PWA Olarak Kullanım
+## 🤝 Katkıda Bulunma (Contributing)
 
-Uygulama tam bir PWA (Progressive Web App) olarak tasarlanmıştır. Tarayıcı menüsünden "Ana Ekrana Ekle" diyerek mobil cihazınızda native bir uygulama gibi kullanabilirsiniz.
+Bu proje **açık kaynaklıdır** ve topluluğun katkılarına her zaman açıktır! Hafızlık sürecini daha iyi hale getirecek her türlü fikre, kod katkısına ve tasarım geliştirmesine açığız.
 
-## 🤝 Katkıda Bulunma
+Katkıda bulunmak için:
+1. Bu depoyu (repository) **Fork**'layın.
+2. Yeni bir dal (branch) oluşturun (`git checkout -b feature/YeniOzellik`).
+3. Değişikliklerinizi işleyin (commit edin) (`git commit -m 'feat: Yeni özellik eklendi'`).
+4. Dalınıza gönderin (push) (`git push origin feature/YeniOzellik`).
+5. Bir **Pull Request (PR)** açın.
 
-Bu proje açık kaynaklı değildir, ancak katkıda bulunmak (Pull Request) veya hata bildirmek (Issue) isterseniz depoyu forklayarak değişiklik önerebilirsiniz.
+Lütfen mevcut olan Hatalar (Issues) sekmesine göz atmayı veya yeni bir özellik eklemeden önce tartışma (Discussion/Issue) açmayı unutmayın.
 
 ## 📝 Lisans
 
-Tüm hakları saklıdır.
+Bu proje **MIT Lisansı** altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına (veya kodların kullanım detaylarına) bakabilirsiniz. Özgürce kullanabilir, kopyalayabilir ve değiştirebilirsiniz. Duanızda bizi de unutmayın. 🤲
